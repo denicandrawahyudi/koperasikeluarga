@@ -1,4 +1,5 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { BottomNav } from "../components/layout/BottomNav";
 import { Sidebar } from "../components/layout/Sidebar";
 import { useAppContext } from "../services/AppContext";
@@ -6,6 +7,19 @@ import { useAppContext } from "../services/AppContext";
 export function AppShell() {
   const { user, logout, modeSederhana, toggleModeSederhana } = useAppContext();
   const navigate = useNavigate();
+  const location = useLocation();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   function handleLogout() {
     logout();
@@ -34,7 +48,11 @@ export function AppShell() {
           <Outlet />
         </main>
       </div>
-      <BottomNav />
+      <BottomNav
+        menuOpen={menuOpen}
+        onToggleMenu={() => setMenuOpen((prev) => !prev)}
+        onCloseMenu={() => setMenuOpen(false)}
+      />
     </div>
   );
 }
