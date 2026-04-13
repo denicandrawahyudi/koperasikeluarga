@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Catatan Keuangan Keluarga
 
 Aplikasi web React yang ringan untuk pencatatan keuangan pribadi atau keluarga. Seluruh antarmuka memakai bahasa Indonesia, dirancang sederhana, mudah dipakai oleh orang tua, dan siap untuk pola deploy frontend statis di GitHub Pages dengan backend ringan Google Apps Script.
@@ -209,3 +210,6 @@ src/
 
 - File ini memberi fondasi lengkap dan scalable.
 - Fitur edit, hapus, export PDF/Excel, upload bukti, transaksi berulang, backup, dan multi-user lebih detail dapat dilanjutkan di tahap berikutnya tanpa perlu ubah arsitektur dasar.
+=======
+# koperasikeluarga
+>>>>>>> a57e0d27f32cb1b214da9fb47cc61009fa803dd4
