@@ -133,6 +133,24 @@ button { cursor: pointer; }
   text-align: left;
   vertical-align: top;
 }
+.table-select {
+  width: 100%;
+  min-height: 42px;
+  padding: 0.6rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: white;
+}
+.color-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  color: white;
+  font-size: 0.85rem;
+}
 .badge { display: inline-flex; padding: 0.35rem 0.75rem; border-radius: 999px; font-size: 0.9rem; background: #ece5da; }
 .badge--success { background: #deefe2; }
 .badge--warning { background: #fdebd9; }

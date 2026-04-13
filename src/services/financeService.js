@@ -117,16 +117,112 @@ export const financeService = {
   },
   getDebts: async () =>
     useDummy ? delay({ success: true, data: dummyDebtsStore }) : apiGet("debts"),
+  createDebt: async (payload) => {
+    if (useDummy) {
+      const created = {
+        ...payload,
+        id_hutang: `HTG-${Date.now()}`,
+        dibuat_oleh: payload.dibuat_oleh || dummyUser.id_pengguna,
+      };
+      dummyDebtsStore = [created, ...dummyDebtsStore];
+      return delay({ success: true, message: "Data hutang berhasil disimpan.", data: created });
+    }
+    return apiPost("debts/create", payload);
+  },
   getReceivables: async () =>
     useDummy ? delay({ success: true, data: dummyReceivablesStore }) : apiGet("receivables"),
+  createReceivable: async (payload) => {
+    if (useDummy) {
+      const created = {
+        ...payload,
+        id_piutang: `PTG-${Date.now()}`,
+        dibuat_oleh: payload.dibuat_oleh || dummyUser.id_pengguna,
+      };
+      dummyReceivablesStore = [created, ...dummyReceivablesStore];
+      return delay({ success: true, message: "Data piutang berhasil disimpan.", data: created });
+    }
+    return apiPost("receivables/create", payload);
+  },
   updateDebtStatus: async (payload) =>
-    useDummy ? delay({ success: true, message: "Status hutang diperbarui.", data: payload }) : apiPost("debts/update-status", payload),
+    useDummy
+      ? (() => {
+          dummyDebtsStore = dummyDebtsStore.map((item) =>
+            item.id_hutang === payload.id_hutang ? { ...item, ...payload } : item,
+          );
+          return delay({ success: true, message: "Status hutang diperbarui.", data: payload });
+        })()
+      : apiPost("debts/update-status", payload),
   updateReceivableStatus: async (payload) =>
-    useDummy ? delay({ success: true, message: "Status piutang diperbarui.", data: payload }) : apiPost("receivables/update-status", payload),
+    useDummy
+      ? (() => {
+          dummyReceivablesStore = dummyReceivablesStore.map((item) =>
+            item.id_piutang === payload.id_piutang ? { ...item, ...payload } : item,
+          );
+          return delay({ success: true, message: "Status piutang diperbarui.", data: payload });
+        })()
+      : apiPost("receivables/update-status", payload),
   getCategories: async () =>
     useDummy ? delay({ success: true, data: dummyCategoriesStore }) : apiGet("categories"),
+  createCategory: async (payload) => {
+    if (useDummy) {
+      const created = {
+        ...payload,
+        id_kategori: `KAT-${Date.now()}`,
+      };
+      dummyCategoriesStore = [created, ...dummyCategoriesStore];
+      return delay({ success: true, message: "Kategori berhasil disimpan.", data: created });
+    }
+    return apiPost("categories/create", payload);
+  },
+  updateCategory: async (payload) => {
+    if (useDummy) {
+      dummyCategoriesStore = dummyCategoriesStore.map((item) =>
+        item.id_kategori === payload.id_kategori ? { ...item, ...payload } : item,
+      );
+      return delay({ success: true, message: "Kategori berhasil diperbarui.", data: payload });
+    }
+    return apiPost("categories/update", payload);
+  },
+  deleteCategory: async (payload) => {
+    if (useDummy) {
+      dummyCategoriesStore = dummyCategoriesStore.map((item) =>
+        item.id_kategori === payload.id_kategori ? { ...item, status: "Nonaktif" } : item,
+      );
+      return delay({ success: true, message: "Kategori dinonaktifkan.", data: payload });
+    }
+    return apiPost("categories/delete", payload);
+  },
   getBudgets: async () =>
     useDummy ? delay({ success: true, data: dummyBudgetsStore }) : apiGet("budgets"),
+  createBudget: async (payload) => {
+    if (useDummy) {
+      const created = {
+        ...payload,
+        id_anggaran: `ANG-${Date.now()}`,
+      };
+      dummyBudgetsStore = [created, ...dummyBudgetsStore];
+      return delay({ success: true, message: "Anggaran berhasil disimpan.", data: created });
+    }
+    return apiPost("budgets/create", payload);
+  },
+  updateBudget: async (payload) => {
+    if (useDummy) {
+      dummyBudgetsStore = dummyBudgetsStore.map((item) =>
+        item.id_anggaran === payload.id_anggaran ? { ...item, ...payload } : item,
+      );
+      return delay({ success: true, message: "Anggaran berhasil diperbarui.", data: payload });
+    }
+    return apiPost("budgets/update", payload);
+  },
+  deleteBudget: async (payload) => {
+    if (useDummy) {
+      dummyBudgetsStore = dummyBudgetsStore.filter(
+        (item) => item.id_anggaran !== payload.id_anggaran,
+      );
+      return delay({ success: true, message: "Anggaran berhasil dihapus.", data: payload });
+    }
+    return apiPost("budgets/delete", payload);
+  },
   getReports: async (filters = {}) =>
     useDummy ? delay({ success: true, data: { transaksi: filterDummyTransactions(filters), hutang: dummyDebtsStore, piutang: dummyReceivablesStore }, filters }) : apiGet("reports", filters),
   getSettings: async () =>
