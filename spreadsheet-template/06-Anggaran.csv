@@ -1,0 +1,4 @@
+id_anggaran,periode,kategori,batas_anggaran,terpakai,sisa,dibuat_oleh
+ANG-001,2026-04,Belanja Harian,2000000,1350000,650000,USR-001
+ANG-002,2026-04,Transportasi,500000,280000,220000,USR-001
+ANG-003,2026-04,Tagihan,800000,320000,480000,USR-002

@@ -1,0 +1,3 @@
+id_pengguna,nama,nomor_hp,email,pin,tanggal_daftar,status,role
+USR-001,Ibu Rini,081234567890,ibu.rini@example.com,1234,2026-04-01,Aktif,Admin
+USR-002,Bapak Andi,081298765432,bapak.andi@example.com,5678,2026-04-01,Aktif,Anggota

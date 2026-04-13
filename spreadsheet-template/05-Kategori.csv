@@ -1,0 +1,7 @@
+id_kategori,nama_kategori,jenis,ikon,warna,status
+KAT-001,Gaji,Pemasukan,💼,#5c8a72,Aktif
+KAT-002,Usaha,Pemasukan,🏪,#6b8f7a,Aktif
+KAT-003,Belanja Harian,Pengeluaran,🛒,#d17b49,Aktif
+KAT-004,Transportasi,Pengeluaran,🚌,#5c7fa3,Aktif
+KAT-005,Tagihan,Pengeluaran,💡,#a36a6a,Aktif
+KAT-006,Kesehatan,Pengeluaran,💊,#7f8fb2,Aktif

@@ -1,0 +1,5 @@
+id_transaksi,tanggal,jenis_transaksi,kategori,subkategori,nominal,metode_pembayaran,deskripsi,catatan,lampiran_bukti,tag,dibuat_oleh,waktu_input,status_data
+TRX-001,2026-04-13,Pemasukan,Gaji,Gaji Bulanan,4500000,Transfer,Gaji bulan April,Masuk tepat waktu,,rutin,USR-001,2026-04-13T07:30:00,Aktif
+TRX-002,2026-04-13,Pengeluaran,Belanja Harian,Sayur dan lauk,125000,Tunai,Belanja pasar,,,pokok,USR-001,2026-04-13T09:10:00,Aktif
+TRX-003,2026-04-12,Pengeluaran,Tagihan,Listrik,320000,E-Wallet,Bayar token listrik,Transaksi berulang,,tagihan,USR-001,2026-04-12T18:25:00,Aktif
+TRX-004,2026-04-10,Pemasukan,Usaha,Jualan kue,350000,Tunai,Hasil jualan kue akhir pekan,,,usaha,USR-002,2026-04-10T11:00:00,Aktif

@@ -1,0 +1,3 @@
+id_piutang,tanggal,nama_peminjam,nominal,tanggal_jatuh_tempo,status,keterangan,sisa_piutang,dibuat_oleh
+PTG-001,2026-04-05,Mbak Sari,750000,2026-04-18,Belum Dibayar,Pinjaman kebutuhan sekolah,750000,USR-001
+PTG-002,2026-04-02,Mas Rudi,300000,2026-04-30,Cicilan,Pinjaman darurat keluarga,150000,USR-002

@@ -1,0 +1,3 @@
+id_aktivitas,waktu,jenis_aktivitas,deskripsi,pengguna,status
+ACT-001,2026-04-13T07:30:00,Tambah Transaksi,Menambah pemasukan gaji,USR-001,Sukses
+ACT-002,2026-04-13T09:10:00,Tambah Transaksi,Menambah pengeluaran belanja harian,USR-001,Sukses

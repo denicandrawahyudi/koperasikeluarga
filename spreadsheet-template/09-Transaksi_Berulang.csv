@@ -1,0 +1,3 @@
+id_transaksi_berulang,nama_transaksi,jenis_transaksi,kategori,subkategori,nominal,metode_pembayaran,frekuensi,tanggal_mulai,status,dibuat_oleh
+TRB-001,Bayar listrik,Pengeluaran,Tagihan,Listrik,320000,E-Wallet,Bulanan,2026-04-01,Aktif,USR-001
+TRB-002,Gaji bulanan,Pemasukan,Gaji,Gaji Bulanan,4500000,Transfer,Bulanan,2026-04-01,Aktif,USR-001

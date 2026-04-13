@@ -1,0 +1,3 @@
+id_hutang,tanggal,nama_pemberi_hutang,nominal,tanggal_jatuh_tempo,status,keterangan,sisa_hutang,dibuat_oleh
+HTG-001,2026-04-01,Pak Anton,1000000,2026-04-20,Cicilan,Pinjam untuk servis motor,450000,USR-001
+HTG-002,2026-03-25,Koperasi,2000000,2026-05-25,Belum Lunas,Pinjaman kebutuhan rumah,2000000,USR-002
